@@ -1,0 +1,21 @@
+---
+  flow-definitions:
+    - name: 'flow'
+      sampling:
+        name: 'constant'
+        args:
+          retry: 2
+      edges:
+        - from:
+          to:
+            - 'loading'
+        - from:
+            - 'loading'
+          to:
+            - 'preprocessing'
+          condition:
+            name: 'fieldNotEqual'
+            node: 'loading'
+            args:
+              key: ['payload', 'time_series']
+              value: null
