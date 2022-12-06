@@ -1,5 +1,5 @@
 click
-codegen
+git+https://github.com/vlagorsse/codegen.git@add_constant#egg=codegen
 graphviz
 jsonschema
 pyyaml
